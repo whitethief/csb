@@ -1,0 +1,13 @@
+{
+ :paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.0"}
+        compojure {:mvn/version "1.6.1"}
+        ring/ring-default {:mvn/version "0.3.2"}}
+
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {lambdaisland/kaocha {:mvn/version "0.0-601"}}
+                  :main-opts ["-m" "kaocha.runner"]}
+           :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.8"}}
+                     :main-opts ["-m" "uberdeps.uberjar" "--target" "target/csb-0.0.1.jar"]}
+           }
+ }
